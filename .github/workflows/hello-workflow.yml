@@ -1,6 +1,6 @@
-name : Enterprise DevSecOps Lab
+name : Enterprise DevSecOps Lab #display name 
 
-on:
+on: #trifgger
   push:
     branches:
       - main
@@ -8,7 +8,7 @@ on:
   #   branches:
   #     - main
 
-jobs:
+jobs: #every pipeline has jobs and each job has steps
   hello:
     runs-on: ubuntu-latest
 
@@ -20,3 +20,24 @@ jobs:
         run: |
           echo "Hello, Enterprise DevSecOps Lab!"
           echo "Wellcome started Successfully!"
+
+job:
+  system-info:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Display System Info
+        run: |
+          echo "System Information:"
+          uname -a
+          echo "CPU Information:"
+          lscpu
+          echo "Memory Information:"
+          free -h
+          echo "Disk Usage:"
+          df -h
+          echo "date and Time:"
+          date && time
