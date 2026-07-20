@@ -25,14 +25,17 @@ jobs: #every pipeline has jobs and each job has steps
       - name: Display GitHub Content
         run: |
           echo "Repository Content: ${{ github.repository }}"
-          echo "Repository Owner: ${{ github.repository_owner }}"
-          echo "Repository Name: ${{ github.repository_name }}"
+          echo "Repository Owner: ${{ github.repository_owner }}"     
           echo "Branch: ${{ github.ref_name }}"
           echo "Actor: ${{ github.actor }}"
           echo "Workflow: ${{ github.workflow }}"
           echo "Run Number: ${{ github.run_number }}"
           echo "Commit SHA: ${{ github.sha }}"
-          
+        
+      - name: Repository Name
+        run: |
+          REPO_NAME=$(basename "${{ github.repository }}")
+          echo "Repository Name: $REPO_NAME"
 
 
       # - name: Display System Info
