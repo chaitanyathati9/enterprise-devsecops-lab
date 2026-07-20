@@ -1,6 +1,6 @@
 name : Enterprise DevSecOps Lab #display name 
 
-on: #trifgger
+on: trifgger
   push:
     branches:
       - main
@@ -22,15 +22,28 @@ jobs: #every pipeline has jobs and each job has steps
           echo "Hello, Enterprise DevSecOps Lab!"
           echo "Wellcome started Successfully!"
 
-      - name: Display System Info
+      - name: Display GitHub Content
         run: |
-          echo "System Information:"
-          uname -a
-          echo "CPU Information:"
-          lscpu
-          echo "Memory Information:"
-          free -h
-          echo "Disk Usage:"
-          df -h
-          echo "Current Date:"
-          date
+          echo "Repository Content: {{ github.repository }}"
+          echo "Repository Owner: {{ github.repository_owner }}"
+          echo "Repository Name: {{ github.repository_name }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Run Number: ${{ github.run_number }}"
+          echo "Commit SHA: ${{ github.sha }}"
+          
+
+
+      # - name: Display System Info
+      #   run: |
+      #     echo "System Information:"
+      #     uname -a
+      #     echo "CPU Information:"
+      #     lscpu
+      #     echo "Memory Information:"
+      #     free -h
+      #     echo "Disk Usage:"
+      #     df -h
+      #     echo "Current Date:"
+      #     date
