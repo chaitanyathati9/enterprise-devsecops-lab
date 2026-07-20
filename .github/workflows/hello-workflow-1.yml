@@ -1,6 +1,6 @@
 name : Enterprise DevSecOps Lab #display name 
 
-on: trifgger
+on: #trigger
   push:
     branches:
       - main
