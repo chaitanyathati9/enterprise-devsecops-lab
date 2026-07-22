@@ -37,7 +37,7 @@ jobs: #every pipeline has jobs and each job has steps
         run: echo "This always runs"
 
       - name: Deploy Message # this step runs when this code pusher to master branch
-        if: ${{ github.ref_name == 'master' }} 
+        if: ${{ github.ref_name == 'main' }} 
         run: |
           echo "Deploying to Production $ENVIRONMENT" 
 
