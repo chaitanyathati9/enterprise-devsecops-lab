@@ -1,0 +1,50 @@
+name: Enterprise DevSecOps Lab #display name 
+
+env:
+  PROJECT_NAME: Enterprise-DevSecOps-Lab
+  ENVIRONMENT: Dev
+
+on: #trigger
+  push:
+    branches:
+      - main
+
+jobs: #every pipeline has jobs and each job has steps
+ #job 1
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Say Hello
+        run: |
+          echo "Hello, Enterprise DevSecOps Lab!"
+          echo "Wellcome started Successfully!"
+      #day 4
+      - name: print  variables
+        run: |
+          echo $PROJECT_NAME"
+          echo "Environment: $ENVIRONMENT"
+          echo "Runner Os: ${{ runner.os }}"
+
+      - name: Print Repository Variable
+        run: |
+          echo "Team: ${{ vars.TEAM_NAME }}"
+        #... Day 4 end ..#
+
+      - name: Display GitHub Content
+        run: |
+          echo "Repository Content: ${{ github.repository }}"
+          echo "Repository Owner: ${{ github.repository_owner }}"     
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Run Number: ${{ github.run_number }}"
+          echo "Commit SHA: ${{ github.sha }}"
+        
+      - name: Repository Name
+        run: |
+          REPO_NAME=$(basename "${{ github.repository }}")
+          echo "Repository Name: $REPO_NAME"
