@@ -1,43 +1,43 @@
-# name : Enterprise DevSecOps Lab #display name 
+name : Enterprise DevSecOps Lab #display name 
 
-# on: #trifgger
-#   push:
-#     branches:
-#       - main
-#   # pull_request:
-#   #   branches:
-#   #     - main
+on: #trifgger
+  workflow_dispatch:
+    branches:
+      - main
+  #  pull_request:
+  #    branches:
+  #      - main
 
-# jobs: #every pipeline has jobs and each job has steps
-#  #job 1
-#   hello:
-#     runs-on: ubuntu-latest
+jobs: #every pipeline has jobs and each job has steps
+ #job 1
+  hello:
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - name: Checkout Repository
-#         uses: actions/checkout@v4
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-#       - name: Say Hello
-#         run: |
-#           echo "Hello, Enterprise DevSecOps Lab!"
-#           echo "Wellcome started Successfully!"
-# #job 2
-#   system-info:
-#     runs-on: ubuntu-latest
+      - name: Say Hello
+        run: |
+          echo "Hello, Enterprise DevSecOps Lab!"
+          echo "Wellcome started Successfully!"
+#job 2
+  system-info:
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - name: Checkout Repository
-#         uses: actions/checkout@v4
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-#       - name: Display System Info
-#         run: |
-#           echo "System Information:"
-#           uname -a
-#           echo "CPU Information:"
-#           lscpu
-#           echo "Memory Information:"
-#           free -h
-#           echo "Disk Usage:"
-#           df -h
-#           echo "Current Date:"
-#           date
+      - name: Display System Info
+        run: |
+          echo "System Information:"
+          uname -a
+          echo "CPU Information:"
+          lscpu
+          echo "Memory Information:"
+          free -h
+          echo "Disk Usage:"
+          df -h
+          echo "Current Date:"
+          date
