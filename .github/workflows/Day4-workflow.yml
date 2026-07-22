@@ -32,6 +32,11 @@ jobs: #every pipeline has jobs and each job has steps
       - name: Print Repository Variable
         run: |
           echo "Team: ${{ vars.TEAM_NAME }}"
+
+      - name: Deploy Message # this step runs when this code pusher to master branch
+        if: ${{ github.ref_name == 'master' }} 
+        run: |
+          echo "Deploying to Production $ENVIRONMENT" 
         #... Day 4 end ..#
 
       - name: Display GitHub Content
