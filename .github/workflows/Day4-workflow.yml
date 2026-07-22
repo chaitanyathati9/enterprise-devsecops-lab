@@ -25,7 +25,7 @@ jobs: #every pipeline has jobs and each job has steps
       #day 4
       - name: print  variables
         run: |
-          echo $PROJECT_NAME"
+          echo "Project Name: $PROJECT_NAME"
           echo "Environment: $ENVIRONMENT"
           echo "Runner Os: ${{ runner.os }}"
 
