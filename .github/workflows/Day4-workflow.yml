@@ -5,7 +5,7 @@
 #   ENVIRONMENT: Dev
 
 # on: #trigger
-#   push:
+#   workflow_dispatch:
 #     branches:
 #       - main
 

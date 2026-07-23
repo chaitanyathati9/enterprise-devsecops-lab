@@ -1,12 +1,9 @@
 # name : Enterprise DevSecOps Lab #display name 
 
-# on: #trifgger
+# on: #trigger
 #   workflow_dispatch:
 #     branches:
 #       - main
-#   #  pull_request:
-#   #    branches:
-#   #      - main
 
 # jobs: #every pipeline has jobs and each job has steps
 #  #job 1
