@@ -1,0 +1,14 @@
+name: Child Workflow
+
+on:
+  workflow_call:
+  
+jobs:
+  hello-from-child:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say Hello from Child Workflow
+        run: |
+          echo "Hello from the Child Workflow!"
+            
