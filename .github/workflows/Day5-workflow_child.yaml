@@ -10,5 +10,5 @@ jobs:
     steps:
       - name: Say Hello from Child Workflow
         run: |
-          echo "Hello from the Child Workflow!"
+          echo "Hello from the Child Workflow"
             
