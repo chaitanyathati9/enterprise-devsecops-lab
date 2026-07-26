@@ -1,38 +1,19 @@
-name: Day 6 Artifacts Workflow
+name: Test Artifact
 
 on:
   workflow_dispatch:
 
 jobs:
-
-  create-artifact:
-    runs-on: ubuntu-latest #runner 1.
+  test:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Create Artifact
+      - name: Create File
         run: |
-          echo "This is a sample artifact content" > artifact.txt
+          echo "Hello World" > hello.txt
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: sample-artifact
-          path: artifact.txt
-
-  download-artifact: 
-    runs-on: ubuntu-latest #runner 2
-    needs: create-artifact
-
-    steps:
-      - name: Download Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: sample-artifact
-          #path: DownloadedArtifacts
-
-      - name: Display Artifact Content
-        run: |
-          cat artifact.txt
+          name: hello-file
+          path: hello.txt
