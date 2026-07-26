@@ -6,7 +6,7 @@ on:
 jobs:
 
   create-artifact:
-    runs-on: ubuntu-latest #runner 1
+    runs-on: ubuntu-latest #runner 1.
 
     steps:
       - name: Checkout Repository
