@@ -1,0 +1,36 @@
+name: Day 6 Artifacts Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  create-artifact:
+    runs-on: ubuntu-latest #runner 1
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Create Artifact
+        run: |
+          echo "This is a sample artifact content" > artifact.txt
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: sample-artifact
+
+  download-artifact: 
+    runs-on: ubuntu-latest #runner 2
+    needs: create-artifact
+
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: sample-artifact
+
+      - name: Display Artifact Content
+        run: |
+          cat artifact.txt
