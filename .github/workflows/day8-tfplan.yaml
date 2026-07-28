@@ -1,4 +1,4 @@
-name: Day 7 Terraform Pipeline
+name: Day 8 Terraform Pipeline
 
 on:
   workflow_dispatch:
